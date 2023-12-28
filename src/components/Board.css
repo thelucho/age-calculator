@@ -1,0 +1,9 @@
+.board {
+  width: clamp(350px, 50%, 600px);
+  min-height: 420px;
+  background: white;
+  border-radius: 20px 20px 140px 20px;
+  box-shadow: 0px 20px 30px 20px rgb(34 34 34 / 5%);
+  padding: 30px;
+  box-sizing: border-box;
+}
