@@ -5,10 +5,6 @@ function App() {
 
   return (
     <>
-      {/* <Board>
-        <BoardForm getAge={getAge} />
-        <BoardResults days={26} months={3} years={38} />
-      </Board> */}
       <Board />
     </>
   )

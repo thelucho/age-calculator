@@ -1,27 +1,6 @@
 import { useState } from 'react'
+import { BoardFormProps, Validations, Values } from '../types/globals'
 import './BoardForm.css'
-
-type Values = {
-  day: number,
-  month: number,
-  year: number
-}
-
-type Validations = {
-  day: string,
-  month: string,
-  year: string
-}
-
-type Age = {
-  day: number,
-  month: number,
-  year: number
-}
-
-interface BoardFormProps {
-  getAge: (age: Age) => void
-}
 
 const initialValues = {
   day: 0,

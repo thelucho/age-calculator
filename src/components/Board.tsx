@@ -1,13 +1,8 @@
 import { useState } from 'react'
 import BoardForm from './BoardForm'
 import BoardResults from './BoardResults'
+import { Age } from '../types/globals'
 import './Board.css'
-
-type Age = {
-  day: number,
-  month: number,
-  year: number
-}
 
 const initialAge = {
   day: 0,
@@ -39,13 +34,21 @@ const Board = () => {
     const monthValue = Math.floor((sencondsDifference % 31536000000) / 2628000000); // 1 mes en milisegundos
     const dayValue = Math.floor(((sencondsDifference % 31536000000) % 2628000000) / 86400000); // 1 día en miliseg
 
+    console.log(data);
     console.log("Años: ", yearValue, " - Meses: ", monthValue, " - Dias: ", dayValue)
+
+    const info: Age = {
+      day: dayValue,
+      month: monthValue,
+      year: yearValue
+    }
+    setInfo(info)
   }
 
   return (
     <div className="board">
       <BoardForm getAge={handleGetAge} />
-      <BoardResults days={data.day} months={data.month} years={data.year} />
+      <BoardResults days={info.day} months={info.month} years={info.year} />
     </div>
   )
 }
