@@ -23,7 +23,7 @@ const Board = () => {
     const info = CalculateAge(age)
     setResult(info)
 
-    console.error(data);
+    console.log(data)
   }
 
   return (

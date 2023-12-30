@@ -1,22 +1,26 @@
+import moment from "moment"
 import { Age } from "../types/globals"
 
-export const CalculateAge = (age: Age) => {
-  const { day, month, year } = age
-  const currentDate = new Date();
 
-  const birthDate = new Date(year, month, day)
+export const CalculateAge = (date: Age) => {
+  const { day, month, year } = date
 
-  const sencondsDifference = currentDate.getTime() - birthDate.getTime();
+  const fullDate = `${day}/${month}/${year}`
 
-  const yearValue = Math.floor(sencondsDifference / 31536000000); // 1 año en milisegundos
-  const monthValue = Math.floor((sencondsDifference % 31536000000) / 2628000000); // 1 mes en milisegundos
-  const dayValue = Math.floor(((sencondsDifference % 31536000000) % 2628000000) / 86400000); // 1 día en miliseg
+  const currentDate = moment()
+  const birthDate = moment(fullDate, "DD/MM/YYYY")
 
-  const info: Age = {
-    day: dayValue,
-    month: monthValue,
-    year: yearValue
+  const years = currentDate.diff(birthDate, 'years')
+  birthDate.add(years, 'years')
+  const months = currentDate.diff(birthDate, 'months')
+  birthDate.add(months, 'months')
+  const days = currentDate.diff(birthDate, 'days')
+
+  const result: Age = {
+    day: days,
+    month: months,
+    year: years
   }
-  
-  return info
+
+  return result
 }
