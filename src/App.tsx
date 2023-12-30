@@ -1,16 +1,15 @@
 import Board from './components/Board'
-import BoardForm from './components/BoardForm'
-import BoardResults from './components/BoardResults'
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <Board>
-        <BoardForm />
+      {/* <Board>
+        <BoardForm getAge={getAge} />
         <BoardResults days={26} months={3} years={38} />
-      </Board>
+      </Board> */}
+      <Board />
     </>
   )
 }

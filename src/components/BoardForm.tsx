@@ -13,6 +13,16 @@ type Validations = {
   year: string
 }
 
+type Age = {
+  day: number,
+  month: number,
+  year: number
+}
+
+interface BoardFormProps {
+  getAge: (age: Age) => void
+}
+
 const initialValues = {
   day: 0,
   month: 0,
@@ -26,7 +36,7 @@ const initialValidations = {
 }
 
 
-const BoardForm = () => {
+const BoardForm = ({ getAge }: BoardFormProps ) => {
   const [values, setValues] = useState<Values>(initialValues)
   const [validations, setValidations] = useState<Validations>(initialValidations)
 
@@ -85,7 +95,9 @@ const BoardForm = () => {
       return false
     }
 
-    alert(JSON.stringify(values))
+    getAge(values)
+
+    //alert(JSON.stringify(values))
   }
 
 
