@@ -6,10 +6,11 @@
 .board-results p span {
   color: #dbdbdb;
   font-family: 'Outfit', sans-serif;
-  font-size: 43px;
+  font-size: 56px;
   font-weight: 600;
-  margin: 30px 0;
+  letter-spacing: -1px;
   line-height: 30px;
+  margin: 37px 0;
 }
 
 .board-results.calculated p {
