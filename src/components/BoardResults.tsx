@@ -1,15 +1,18 @@
-type Props = {
+import "./BoardResults.css"
+
+type BoardResultsProps = {
   days: number,
   months: number,
-  years: number
+  years: number,
+  status?: boolean
 }
 
-const BoardResults = (props: Props) => { 
+const BoardResults = (props: BoardResultsProps) => {
   return (
-    <div className="board-results">
-      <p>{ props.years } years</p>
-      <p>{ props.months } months</p>
-      <p>{ props.days } days</p>
+    <div className={`board-results ${props.status ? 'calculated' : ''}`}>
+      <p><span>{ props.years }</span> years</p>
+      <p><span>{ props.months }</span> months</p>
+      <p><span>{ props.days }</span> days</p>
     </div>
   )
 }

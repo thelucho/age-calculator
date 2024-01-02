@@ -14,6 +14,7 @@ const initialAge = {
 const Board = () => {
   const [data, setData] = useState<Age>(initialAge)
   const [result, setResult] = useState<Age>(initialAge)
+  const [status, setStatus] = useState<boolean>(false)
 
   const handleGetAge = (age: Age) => {
     setData((prevState) => {
@@ -22,6 +23,7 @@ const Board = () => {
     
     const info = CalculateAge(age)
     setResult(info)
+    setStatus(true)
 
     console.log(data)
   }
@@ -29,7 +31,7 @@ const Board = () => {
   return (
     <div className="board">
       <BoardForm getAge={handleGetAge} />
-      <BoardResults days={result.day} months={result.month} years={result.year} />
+      <BoardResults days={result.day} months={result.month} years={result.year} status={status} />
     </div>
   )
 }

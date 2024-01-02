@@ -100,7 +100,7 @@ const BoardForm = ({ getAge }: BoardFormProps ) => {
               onBlur={validateOne}
               placeholder="DD"
             />
-            <div>{ dayVal }</div>
+            <div className="error-msg">{ dayVal }</div>
           </div>
 
           <div className="form-group">
@@ -116,7 +116,7 @@ const BoardForm = ({ getAge }: BoardFormProps ) => {
               onBlur={validateOne}
               placeholder="MM"
             />
-            <div>{ monthVal }</div>
+            <div className="error-msg">{ monthVal }</div>
           </div>
 
           <div className="form-group">
@@ -132,7 +132,7 @@ const BoardForm = ({ getAge }: BoardFormProps ) => {
               onBlur={validateOne}
               placeholder="YYYY"
             />
-            <div>{ yearVal }</div>
+            <div className="error-msg">{ yearVal }</div>
           </div>
         </div>
 
